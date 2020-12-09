@@ -61,7 +61,7 @@ function task() {
                 downloadTemp: target.downloadTemp
             }
         })
-    }).then(context => { // 交互问答，配置项目信息
+    }).then(context => {
         return inquirer.prompt([{
             name: 'projectName',
             message: '项目名称',
@@ -86,6 +86,6 @@ function task() {
     }).then(() => {
         console.log(logSymbols.success, chalk.green('项目拉取完成。'))
     }).catch(err => {
-        console.error(logSymbols.error, chalk.red(`构建失败：${err.message}`))
+        console.error(logSymbols.error, chalk.red(`拉取失败：${err.message}`))
     })
 }
